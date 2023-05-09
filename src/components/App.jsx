@@ -16,8 +16,20 @@ export class App extends Component {
       name,
       number,
     };
+    if (
+      this.state.contacts.some(
+        contact =>
+          contact.name.toLowerCase() === newContact.name.toLowerCase() ||
+          contact.number === newContact.number
+      )
+    ) {
+      alert(`${name} is already in contacts`);
+      return;
+    }
     this.setState(({ contacts }) => ({
-      contacts: [newContact, ...contacts],
+      contacts: [newContact, ...contacts].sort((firstContact, secondContact) =>
+        firstContact.name.localeCompare(secondContact.name)
+      ),
     }));
   };
 
