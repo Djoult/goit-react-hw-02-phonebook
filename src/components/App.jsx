@@ -40,8 +40,6 @@ export class App extends Component {
   };
 
   changeFilter = e => {
-    console.log(e.currentTarget.value);
-
     this.setState({ filter: e.currentTarget.value });
   };
 
