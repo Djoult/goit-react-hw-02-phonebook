@@ -1,0 +1,9 @@
+.profile {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.avatar {
+  width: 300px;
+  background-color: blueviolet;
+}
