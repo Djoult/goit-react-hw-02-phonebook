@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import ContactForm from './ContactForm/ContactForm';
-import Contacts from './Contacts/Contacts';
-import Filter from './Filter/Filter';
+import ContactForm from './ContactForm';
+import Contacts from './Contacts';
+import Filter from './Filter';
 import shortid from 'shortid';
 import { H1, H2, Message } from './App/App.styled';
 
