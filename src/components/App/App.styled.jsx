@@ -12,7 +12,7 @@ export const H2 = styled.h2`
 
 export const Message = styled.p`
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 26px;
+  font-size: 28px;
   text-align: center;
   margin-top: 36px;
   color: #af4425;
