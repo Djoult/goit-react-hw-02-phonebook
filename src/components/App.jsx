@@ -3,6 +3,7 @@ import ContactForm from './ContactForm/ContactForm';
 import Contacts from './Contacts/Contacts';
 import Filter from './Filter/Filter';
 import shortid from 'shortid';
+import { H1, H2, Message } from './App/App.styled';
 
 export class App extends Component {
   state = {
@@ -57,13 +58,24 @@ export class App extends Component {
     const getVisibleContacts = this.getVisibleContacts();
     return (
       <>
-        <h1>PhoneBook</h1>
+        <H1>PhoneBook</H1>
         <ContactForm onSubmit={this.addContact} />
-        <Filter value={filter} onChange={this.changeFilter} />
-        <Contacts
-          contacts={getVisibleContacts}
-          onDeleteContact={this.deleteContact}
-        />
+        {this.state.contacts.length > 0 ? (
+          <div>
+            <Filter value={filter} onChange={this.changeFilter} />
+            <H2>Contacts</H2>
+            {this.getVisibleContacts().length !== 0 ? (
+              <Contacts
+                contacts={getVisibleContacts}
+                onDeleteContact={this.deleteContact}
+              />
+            ) : (
+              <Message>No contacts found for your request</Message>
+            )}
+          </div>
+        ) : (
+          <Message>Your contacts can be here</Message>
+        )}
       </>
     );
   }

@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { Label, Input } from './Filter.styled';
 
 const Filter = ({ value, onChange }) => (
-  <label>
+  <Label>
     Filter by name or number
-    <input type="text" value={value} onChange={onChange} />
-  </label>
+    <Input type="text" value={value} onChange={onChange} />
+  </Label>
 );
 
 Filter.propTypes = {

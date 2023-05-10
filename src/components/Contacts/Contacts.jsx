@@ -1,20 +1,37 @@
 import PropTypes from 'prop-types';
+import { RxAvatar } from 'react-icons/rx';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import {
+  UlList,
+  LiItem,
+  SpanIcon,
+  SpanName,
+  SpanNumber,
+  ButtonDlt,
+} from './Contacts.styled';
 
 function Contacts({ contacts, onDeleteContact }) {
   return (
-    <ul>
+    <UlList>
       {contacts.map(({ id, name, number }) => {
         return (
-          <li key={id}>
-            <span>{name}</span>
-            <span>{number}</span>
-            <button type="button" onClick={() => onDeleteContact(id)}>
-              Delete
-            </button>
-          </li>
+          <LiItem key={id}>
+            <SpanIcon
+              inputColor={`#${Math.floor(Math.random() * 16777215).toString(
+                16
+              )}`}
+            >
+              <RxAvatar />
+            </SpanIcon>
+            <SpanName>{name}</SpanName>
+            <SpanNumber>{number}</SpanNumber>
+            <ButtonDlt type="button" onClick={() => onDeleteContact(id)}>
+              <RiDeleteBin6Line />
+            </ButtonDlt>
+          </LiItem>
         );
       })}
-    </ul>
+    </UlList>
   );
 }
 
